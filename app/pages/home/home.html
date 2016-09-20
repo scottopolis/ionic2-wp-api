@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home">
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <ion-avatar item-left *ngIf="item.featured_image_urls && item.featured_image_urls.thumbnail">
+      <img [src]="item.featured_image_urls.thumbnail">
+    </ion-avatar>
+    <h2 [innerHTML]="item.title.rendered"></h2>
+    <p [innerHTML]="item.excerpt.rendered"></p>
+    </button>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{selectedItem.title.rendered}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+	<div *ngIf="selectedItem" class="selection">
+	<ion-card>
+
+		<img *ngIf="selectedItem.featured_image_urls && selectedItem.featured_image_urls.medium" [src]="selectedItem.featured_image_urls.medium" class="featured-image" />
+
+		<ion-card-content>
+			<ion-card-title>
+			  <b>{{selectedItem.title.rendered}} ${{selectedItem._price}}</b>
+			</ion-card-title>
+			<p [innerHTML]="selectedItem.content.rendered"></p>
+		</ion-card-content>
+
+	</ion-card>
+	</div>
+
+</ion-content>
