@@ -8,4 +8,6 @@ To install, clone this repo and cd into the root directory.
 
 `npm install`
 
-`ionic serve`
+`npm run serve`
+
+Updated for Ionic 3.2.1.
